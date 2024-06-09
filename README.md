@@ -11,3 +11,11 @@
 - **Write and Sketch**: Capture and share your special memories.
 - **Community Engagement**: Explore and connect with shared experiences.
 - **User-Friendly Interface**: Simple navigation with tabs for "Memories," "Explore," and "Walls."
+
+---
+
+## Architecture:
+
+
+![image](https://github.com/Mohamed-Elrayes/daily_jornal/assets/52123133/debb66cc-b596-4518-a36b-f5fe6d1f1a5a)
+
