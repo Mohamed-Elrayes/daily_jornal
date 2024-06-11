@@ -1,15 +1,15 @@
 bootstrap:
 	flutter clean
 	flutter pub get
-	flutter pub run build_runner build --delete-conflicting-outputs
-	make gen
+	# flutter pub run build_runner build --delete-conflicting-outputs
+	# make gen
 
 gen:
 	fgen --no-watch
-	flutter gen-l10n 
+	# flutter gen-l10n 
 
 watch:
-		dart run build_runner watch -d
+		# dart run build_runner watch -d
 
 pod:
 	cd ios && pod install && pod update && cd ..
