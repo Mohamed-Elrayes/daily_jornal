@@ -1,0 +1,46 @@
+name: Build
+
+on:
+  push:
+    branches: [main, dev]
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    paths-ignore:
+      - "**.md"
+
+jobs:
+  build:
+     name: Run flutter test and analyze
+     runs-on: ubuntu-latest
+     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Flutter environment
+        uses: subosito/flutter-action@v2.10.0
+        with:
+          flutter-version: "3.22.0"
+
+      - name: Install Flutter Asset Generator Globaly
+        run: | 
+          dart pub global activate flutter_asset_generator 
+        
+      - name: Bootstrap
+        run: |
+          make bootstrap
+
+      - name: Verify formatting
+        run: |
+          find . -name "*.dart" \
+          ! -name "*.g.dart" \
+          ! -name "app_localizations*.dart" \
+          ! -path "*/gen/*" \
+          ! -name "firebase_options*.dart" \
+          | xargs dart format --output=none --set-exit-if-changed --line-length=100
+        
+      - name: Run flutter analyze
+        run: flutter analyze --fatal-infos
+
+      - name: Run tests
+        run: flutter test
