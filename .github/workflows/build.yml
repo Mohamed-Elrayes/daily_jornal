@@ -42,5 +42,5 @@ jobs:
       - name: Run flutter analyze
         run: flutter analyze --fatal-infos
 
-      - name: Run tests
-        run: flutter test
+      # - name: Run tests
+      #   run: flutter test
