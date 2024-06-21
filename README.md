@@ -29,9 +29,7 @@
 
 ### Steps for Development
 
-#### 1. User Stories
-
-**Primary Actor**: User
+#### User Stories
 
 **User Stories**:
 - **View Memory Walls**: As a user, I want to view memory walls near me so that I can explore memories shared by others.
